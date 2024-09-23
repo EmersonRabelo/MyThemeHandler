@@ -37,12 +37,12 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Home() {
 
-    var theme by remember {
+    var themePicked by remember {
         mutableStateOf("dark")
     }
 
     AppTheme(
-        picked = theme
+        picked = themePicked
     ) {
         Scaffold(
             floatingActionButton = {
@@ -72,7 +72,7 @@ fun Home() {
                 Text(text = "My Stack Mobile")
                 Button(
                     onClick = {
-                        theme = if (theme == "dark") "light" else "dark"
+                        themePicked = if (themePicked == "dark") "light" else "dark"
                     }
                 ) {
                     Text(
@@ -81,7 +81,7 @@ fun Home() {
                 }
                 Button(
                     onClick = {
-                        theme = "deepDark"
+                        themePicked = "deepDark"
                     }
                 ) {
                     Text(
